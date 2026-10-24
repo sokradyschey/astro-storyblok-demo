@@ -1,0 +1,17 @@
+
+---
+import { storyblokEditable } from '@storyblok/astro';
+import Header from '../components/Header.astro';
+
+const { blok } = Astro.props;
+---
+
+<div {...storyblokEditable(blok)}>
+    <Header
+    logo={blok.logo}
+    logoAlt={blok.logo_alt || 'Blueprint Core'}
+    navItems={blok.nav_items || []}
+    ctaText={blok.cta_text}
+    ctaLink={blok.cta_link}
+    />
+</div>

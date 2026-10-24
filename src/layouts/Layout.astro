@@ -1,23 +1,33 @@
+
 ---
-const currentYear = new Date().getFullYear();
+import '../styles/global.css';
+import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Blueprint Core' } = Astro.props;
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get('cdn/stories/global-header', {
+  version: 'draft',
+});
+
+const headerStory = data.story;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Storyblok & Astro</title>
-		<link
-			rel="stylesheet"
-			href="https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css"
-		/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-		<slot />
-		<footer>All rights reserved © {currentYear}</footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <StoryblokComponent blok={headerStory.content} />
+    <slot />
+  </body>
 </html>

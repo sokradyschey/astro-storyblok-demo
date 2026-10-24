@@ -1,0 +1,13 @@
+
+---
+import { storyblokEditable } from '@storyblok/astro';
+
+const { blok } = Astro.props;
+const href = blok.link?.cached_url
+  ? `/${blok.link.cached_url.replace(/^\/+/, '')}`
+  : blok.link?.url || '/';
+---
+
+<a {...storyblokEditable(blok)} href={href}>
+  {blok.label}
+</a>

@@ -1,0 +1,199 @@
+
+---
+import { storyblokEditable } from '@storyblok/astro';
+
+const {
+  logo,
+  logoAlt = 'Blueprint Core',
+  navItems = [],
+  ctaText = "Let's Talk",
+  ctaLink = { cached_url: 'contact' },
+} = Astro.props;
+
+const currentPath =
+  Astro.url.pathname.replace(/\/+$/, '') || '/';
+
+function getHref(link) {
+  if (!link) return '/';
+
+  // External links should use their full URL.
+  if (link.linktype === 'url' && link.url) {
+    return link.url;
+  }
+
+  // Internal Storyblok links use cached_url.
+  if (link.cached_url) {
+    const path = link.cached_url.replace(/^\/+|\/+$/g, '');
+
+    return !path || path === 'home' ? '/' : `/${path}`;
+  }
+
+  return link.url || '/';
+}
+---
+
+<header class="site-header">
+    <a class="logo" href="/" aria-label="Go to homepage">
+    {logo?.filename ? (
+        <img src={logo.filename} alt={logoAlt} />
+    ) : (
+        logoAlt
+    )}
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+        {navItems.map((item) => {
+            const href = getHref(item.link);
+            const normalizedHref = href.replace(/\/+$/, '') || '/';
+            const isActive = currentPath === normalizedHref;
+
+            return (
+            <a
+                {...storyblokEditable(item)}
+                href={href}
+                class:list={['nav-link', { active: isActive }]}
+                aria-current={isActive ? 'page' : undefined}
+            >
+                {item.label}
+            </a>
+            );
+        })}
+    </nav>
+
+    <a class="contact-button" href={getHref(ctaLink)}>
+    {ctaText}
+    </a>
+
+    <details class="mobile-menu">
+        <summary aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </summary>
+
+        <nav aria-label="Mobile navigation">
+            {navItems.map((item) => (
+            <a
+                {...storyblokEditable(item)}
+                href={getHref(item.link)}
+            >
+                {item.label}
+            </a>
+            ))}
+
+            <a href={getHref(ctaLink)}>{ctaText}</a>
+        </nav>
+</details>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.25rem clamp(1rem, 5vw, 4rem);
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .logo {
+    color: #172554;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+.logo img {
+  display: block;
+  width: auto;
+  max-width: 200px;
+  height: 48px;
+  object-fit: contain;
+}
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .nav-link {
+    color: #374151;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #2563eb;
+  }
+
+  .contact-button {
+    padding: 0.75rem 1.15rem;
+    color: white;
+    background: #CD270A;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .contact-button:hover {
+    background: #B02108;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .desktop-nav,
+    .site-header > .contact-button {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: block;
+      position: relative;
+    }
+
+    .mobile-menu summary {
+      display: grid;
+      gap: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu summary span {
+      width: 24px;
+      height: 2px;
+      background: #172554;
+    }
+
+    .mobile-menu nav {
+      position: absolute;
+      z-index: 10;
+      top: calc(100% + 1rem);
+      right: 0;
+      display: grid;
+      gap: 1rem;
+      min-width: 200px;
+      padding: 1.25rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+    }
+
+    .mobile-menu nav a {
+      color: #374151;
+      text-decoration: none;
+    }
+  }
+</style>

@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand colors */
+  --navy: #003B80;
+  --navy-deep: #071A36;
+  --red: #CD270A;
+  --gold: #BF8F00;
+
+  /* Surface colors */
+  --paper: #F3F5F9;
+  --white: #FFFFFF;
+  --line: #D5DCE7;
+
+  /* Text colors */
+  --ink: #0E1A2B;
+  --muted: #4A5872;
+  --on-dark: #E8EEF7;
+  --on-dark-muted: #9FB0CC;
+
+  /* Typography */
+  --display: "Big Shoulders Display", "Arial Narrow",
+    "Roboto Condensed", Impact, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  /* Layout */
+  --wrap: 1180px;
+  --gutter: clamp(16px, 4vw, 40px);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+}
+
+h1,
+h2,
+h3,
+h4,
+.display-text {
+  font-family: var(--display);
+}
+
+code,
+pre,
+.mono-text {
+  font-family: var(--mono);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(
+    calc(100% - 2 * var(--gutter)),
+    var(--wrap)
+  );
+  margin-inline: auto;
+}

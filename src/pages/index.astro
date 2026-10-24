@@ -1,11 +1,18 @@
+
 ---
-import Welcome from '../components/Welcome.astro';
+import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get('cdn/stories/home', {
+  version: 'draft',
+});
+
+const story = data.story;
 ---
 
 <Layout>
-	<Welcome />
+  <StoryblokComponent blok={story.content} />
 </Layout>
