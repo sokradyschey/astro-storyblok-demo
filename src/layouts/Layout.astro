@@ -1,6 +1,7 @@
 
 ---
 import '../styles/global.css';
+import Hero from '../components/Hero.astro';
 import { useStoryblokApi } from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 
@@ -28,6 +29,6 @@ const headerStory = data.story;
   </head>
   <body>
     <StoryblokComponent blok={headerStory.content} />
-    <slot />
+	<Hero />
   </body>
 </html>
