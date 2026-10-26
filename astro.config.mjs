@@ -7,7 +7,6 @@ import netlify from '@astrojs/netlify';
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
 const {
-	NETLIFY,
 	STORYBLOK_DELIVERY_API_TOKEN,
 	STORYBLOK_API_BASE_URL,
 	STORYBLOK_REGION,
