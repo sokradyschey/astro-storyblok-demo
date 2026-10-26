@@ -1,3 +1,4 @@
+import { storyblokInit, apiPlugin } from "@storyblok/js";
 import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
@@ -21,6 +22,7 @@ export default defineConfig({
 	integrations: [
 		storyblok({
 			accessToken: STORYBLOK_DELIVERY_API_TOKEN,
+			use: [apiPlugin],
 			livePreview: true,
 			apiOptions: {
 				/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
@@ -37,6 +39,7 @@ export default defineConfig({
 				teaser: 'storyblok/Teaser',
 				header: 'storyblok/Header',
 				nav_item: 'storyblok/NavItem',
+				hero: 'storyblok/Hero',
 			},
 		}),
 	],

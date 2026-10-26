@@ -1,0 +1,29 @@
+
+---
+import { storyblokEditable } from '@storyblok/astro';
+import Hero from '../components/Hero.astro';
+
+const { blok } = Astro.props;
+
+const proofPoints = typeof blok.proof_points === 'string'
+  ? blok.proof_points.split('\n').map((point) => point.trim()).filter(Boolean)
+  : [];
+
+---
+
+<div {...storyblokEditable(blok)}>
+  <Hero
+    eyebrow={blok.eyebrow}
+    headlineStart={blok.headline_start}
+    emphasizedText={blok.emphasized_text}
+    headlineEnd={blok.headline_end}
+    description={blok.description}
+    primaryCtaText={blok.primary_cta_text}
+    primaryCtaLink={blok.primary_cta_link}
+    secondaryCtaText={blok.secondary_cta_text}
+    secondaryCtaLink={blok.secondary_cta_link}
+    proofPoints={proofPoints}
+    serviceLines={blok.service_lines || []}
+    location={blok.location}
+  />
+</div>

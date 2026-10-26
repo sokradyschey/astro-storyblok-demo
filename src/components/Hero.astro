@@ -1,37 +1,407 @@
+
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+interface StoryblokLink {
+  url?: string;
+  cached_url?: string;
+  linktype?: string;
+  target?: string;
+}
+
+interface ServiceLine {
+  _uid?: string;
+  code?: string;
+  label?: string;
+  link?: StoryblokLink;
+}
+
+interface Props {
+  eyebrow?: string;
+  headlineStart?: string;
+  emphasizedText?: string;
+  headlineEnd?: string;
+  description?: string;
+  primaryCtaText?: string;
+  primaryCtaLink?: StoryblokLink;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: StoryblokLink;
+  proofPoints?: string[];
+  serviceLines?: ServiceLine[];
+  location?: string;
+}
+
+const {
+  eyebrow = 'Service-Disabled Veteran-Owned Small Business',
+  headlineStart = 'The speed of change requires the',
+  emphasizedText = 'talent',
+  headlineEnd = 'of people.',
+  description = "Talent solutions for today's changing business imperatives, from the hospital floor to the job site.",
+  primaryCtaText = 'Contact Us',
+  primaryCtaLink = { url: '#contact', linktype: 'url' },
+  secondaryCtaText = 'Why Us',
+  secondaryCtaLink = { url: '#why-us', linktype: 'url' },
+  proofPoints = [
+    'Hospitals & health systems',
+    'State Medicaid programs',
+    'VA medical centers',
+  ],
+  serviceLines = [
+    { _uid: 'hc', code: 'HC', label: 'Healthcare Workforce Solutions', link: { url: '#healthcare', linktype: 'url' } },
+    { _uid: 'cw', code: 'CW', label: 'Consulting & Workforce Solutions', link: { url: '#workforce', linktype: 'url' } },
+    { _uid: 'ec', code: 'EC', label: 'Engineering & Construction', link: { url: '#construction', linktype: 'url' } },
+    { _uid: 'ps', code: 'PS', label: 'Procurement Services', link: { url: '#procurement', linktype: 'url' } },
+  ],
+  location = 'Indianapolis, IN',
+} = Astro.props;
+
+function getHref(link?: StoryblokLink) {
+  if (!link) return '#';
+
+  const href = link.url || link.cached_url || '#';
+
+  // Preserve page anchors and external URLs.
+  if (
+    href.startsWith('#') ||
+    href.startsWith('/') ||
+    href.startsWith('https://') ||
+    href.startsWith('http://') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:')
+  ) {
+    return href;
+  }
+
+  return `/${href}`;
+}
 ---
 
-<div id="container">
-	<main>
-		<section class="hero" aria-labelledby="heroTitle">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow"><span class="star"></span>&nbsp; Service-Disabled Veteran-Owned Small Business</div>
-        <h1 id="heroTitle">The speed of change requires the <em>talent</em> of people.</h1>
-        <p class="lede">Talent solutions for today's changing business imperatives, from the hospital floor to the job site.</p>
-        <div class="ctas">
-          <a class="btn btn-red" href="#contact">Contact Us</a>
-          <a class="btn btn-ghost" href="#why-us">Why Us</a>
-        </div>
-        <div class="proof">
-          <span>Hospitals &amp; health systems</span>
-          <span>State Medicaid programs</span>
-          <span>VA medical centers</span>
-        </div>
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="wrap">
+    <div class="hero__copy">
+      <div class="eyebrow">
+        <span class="star" aria-hidden="true"></span>
+        {eyebrow}
       </div>
-      <aside class="dossier" aria-label="Service lines">
-        <div class="head"><span>Service lines</span><span>Indianapolis, IN</span></div>
-        <ol>
-          <li class="lead-line"><a href="#healthcare"><span class="k">HC</span><span class="t">Healthcare Workforce Solutions</span><span class="arr">→</span></a></li>
-          <li><a href="#workforce"><span class="k">CW</span><span class="t">Consulting &amp; Workforce Solutions</span><span class="arr">→</span></a></li>
-          <li><a href="#construction"><span class="k">EC</span><span class="t">Engineering &amp; Construction</span><span class="arr">→</span></a></li>
-          <li><a href="#procurement"><span class="k">PS</span><span class="t">Procurement Services</span><span class="arr">→</span></a></li>
-        </ol>
-      </aside>
+
+      <h1 id="heroTitle">
+        {headlineStart} <em>{emphasizedText}</em> {headlineEnd}
+      </h1>
+
+      <p class="lede">{description}</p>
+
+      <div class="ctas">
+        <a class="btn btn-red" href={getHref(primaryCtaLink)}>
+          {primaryCtaText}
+        </a>
+        <a class="btn btn-ghost" href={getHref(secondaryCtaLink)}>
+          {secondaryCtaText}
+        </a>
+      </div>
+
+      {proofPoints.length > 0 && (
+        <div class="proof">
+          {proofPoints.map((point) => <span>{point}</span>)}
+        </div>
+      )}
     </div>
-    <div class="ribbon" aria-hidden="true"></div>
-  </section>
-	</main>
-</div>
+
+    <aside class="dossier" aria-label="Service lines">
+      <div class="head">
+        <span>Service lines</span>
+        <span>{location}</span>
+      </div>
+
+      <ol>
+        {serviceLines.map((item, index) => (
+          <li class:list={[{ 'lead-line': index === 0 }]}>
+            <a href={getHref(item.link)}>
+              <span class="k">{item.code}</span>
+              <span class="t">{item.label}</span>
+              <span class="arr" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  </div>
+
+  <div class="ribbon" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: clamp(64px, 8vw, 112px) 0 0;
+    background: var(--navy-deep, #071A36);
+    color: var(--white, #fff);
+  }
+
+  .wrap {
+    width: min(calc(100% - 2 * var(--gutter, 40px)), var(--wrap, 1180px));
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+    align-items: center;
+    gap: clamp(40px, 6vw, 88px);
+    padding-bottom: clamp(64px, 8vw, 100px);
+  }
+
+  .hero__copy {
+    min-width: 0;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: var(--on-dark-muted, #9FB0CC);
+    font-family: var(--mono, monospace);
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .star {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 12px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .star::before,
+  .star::after {
+    position: absolute;
+    content: "";
+    background: var(--red, #CD270A);
+    inset: 0 auto 0 5px;
+    width: 2px;
+  }
+
+  .star::after {
+    transform: rotate(90deg);
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    margin: 0;
+    font-family: var(--display, Impact, sans-serif);
+    font-size: clamp(3rem, 5.8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.99;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .hero h1 em {
+    color: var(--gold, #BF8F00);
+    font-weight: inherit;
+  }
+
+  .lede {
+    max-width: 590px;
+    margin: 26px 0 0;
+    color: var(--on-dark, #E8EEF7);
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .btn-red {
+    background: var(--red, #CD270A);
+    color: var(--white, #fff);
+  }
+
+  .btn-red:hover {
+    background: var(--white, #fff);
+    color: var(--navy-deep, #071A36);
+  }
+
+  .btn-ghost {
+    border-color: rgba(255, 255, 255, 0.42);
+    color: var(--white, #fff);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--white, #fff);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 42px;
+    color: var(--on-dark-muted, #9FB0CC);
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  .proof span::before {
+    content: "•";
+    margin-right: 8px;
+    color: var(--gold, #BF8F00);
+  }
+
+  .dossier {
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .dossier .head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+    padding: 17px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--on-dark-muted, #9FB0CC);
+    font-family: var(--mono, monospace);
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .dossier ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dossier li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .dossier li:last-child {
+    border-bottom: 0;
+  }
+
+  .dossier li a {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 18px;
+    align-items: center;
+    gap: 12px;
+    min-height: 72px;
+    padding: 16px 20px;
+    color: var(--on-dark, #E8EEF7);
+    text-decoration: none;
+    transition: background-color 160ms ease;
+  }
+
+  .dossier li a:hover {
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .dossier .k {
+    color: var(--on-dark-muted, #9FB0CC);
+    font-family: var(--mono, monospace);
+    font-size: 0.72rem;
+  }
+
+  .dossier .t {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .dossier .arr {
+    color: var(--gold, #BF8F00);
+    font-size: 1.1rem;
+    text-align: right;
+  }
+
+  .dossier .lead-line {
+    background: rgba(255, 255, 255, 0.075);
+  }
+
+  .dossier .lead-line .t {
+    color: var(--white, #fff);
+  }
+
+  .ribbon {
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      var(--red, #CD270A) 0 33.333%,
+      var(--gold, #BF8F00) 33.333% 66.666%,
+      var(--navy, #003B80) 66.666% 100%
+    );
+  }
+
+  @media (max-width: 850px) {
+    .wrap {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+    }
+
+    .dossier {
+      max-width: 620px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero {
+      padding-top: 54px;
+    }
+
+    .wrap {
+      width: calc(100% - 2 * var(--gutter, 20px));
+      padding-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 12vw, 4rem);
+    }
+
+    .proof {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .dossier .head,
+    .dossier li a {
+      padding-inline: 14px;
+    }
+
+    .dossier li a {
+      grid-template-columns: 28px minmax(0, 1fr) 16px;
+      gap: 9px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .dossier li a {
+      transition: none;
+    }
+  }
+</style>
