@@ -1,6 +1,7 @@
 
 ---
 import '../styles/global.css';
+import Hero from '../components/Hero.astro';
 import Subheader from '../components/Subheader.astro';
 import Certs from '../components/Certs.astro';
 import Footer from '../components/Footer.astro';
@@ -33,7 +34,7 @@ const headerStory = data.story;
   <body>
 	<Subheader />
     <StoryblokComponent blok={headerStory.content} />
-	<slot />
+	<Hero />
 	<Certs />
 	<Footer />
   </body>
