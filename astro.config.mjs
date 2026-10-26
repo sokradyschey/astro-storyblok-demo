@@ -3,7 +3,6 @@ import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 
-import vercel from '@astrojs/vercel';
 import netlify from '@astrojs/netlify';
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
@@ -42,7 +41,7 @@ export default defineConfig({
 		}),
 	],
 	output: 'server',
-	adapter: NETLIFY ? netlify() : vercel(),
+	adapter: netlify(),
 	vite: {
 		plugins: [mkcert()],
 	},
