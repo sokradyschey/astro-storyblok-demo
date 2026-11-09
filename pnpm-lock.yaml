@@ -9,18 +9,18 @@ importers:
   .:
     dependencies:
       '@astrojs/netlify':
-        specifier: ^8.2.10
-        version: 8.2.10(@types/node@26.6.5)(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))(yaml@2.9.1)
+        specifier: ^8.2.12
+        version: 8.2.12(@types/node@26.6.5)(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))(yaml@2.9.1)
       '@astrojs/vercel':
-        specifier: ^11.0.10
-        version: 11.0.16(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(rollup@4.64.12)(ws@8.22.0)
+        specifier: ^11.0.20
+        version: 11.0.20(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(rollup@4.64.12)(supports-color@10.2.2)(ws@8.22.0)
     devDependencies:
       '@storyblok/astro':
         specifier: ^10.3.1
-        version: 10.3.2(@floating-ui/dom@1.8.0)(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+        version: 10.3.2(@floating-ui/dom@1.8.0)(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
       astro:
         specifier: ^7.3.3
-        version: 7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
+        version: 7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
       vite:
         specifier: ^8.3.0
         version: 8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
@@ -104,11 +104,14 @@ packages:
   '@astrojs/internal-helpers@0.13.0':
     resolution: {integrity: sha512-20jxQqnSmpskcGyad7N5l6Xf1gz0UCa6lNde44bEBdaXGpncEYfAZJ142r2ZgzBaG4dUyzGmhqZWv1INU2eiHQ==}
 
+  '@astrojs/internal-helpers@0.13.1':
+    resolution: {integrity: sha512-LgGLGzoC0wCT3mjDYrxz+hct/tws0enpWsLJW3bswHR3PKgusp/H9xRIT8rTdsyvLM0TcRhhvRL30J2oaZNcqA==}
+
   '@astrojs/markdown-satteri@0.4.5':
     resolution: {integrity: sha512-0IeGdoFbv0f+442KJhYS44Wg8F3MuHmRsxIEYuFyqkjRubc6dPBFZ7azor5t4AeXLQoT5A5h9HyViKpd70Dl9w==}
 
-  '@astrojs/netlify@8.2.10':
-    resolution: {integrity: sha512-UC/ZLJ/tYDSDkMLYvaMWkQFX7AF3h/1gCILnF5oS0aVKbvQg2DfRpXDiZGHAKVaNNVy2hH3V+1n1Dl7oy/8kfQ==}
+  '@astrojs/netlify@8.2.12':
+    resolution: {integrity: sha512-Ex1HtYZSQH8vzPpIt5mwth9DN5O7bYzbfgKzXh24yjawrz0UeDC8ZV4P12d0N052qfhU/SZXVDcrtSlTAbAa4A==}
     peerDependencies:
       astro: ^7.0.0
 
@@ -123,8 +126,8 @@ packages:
   '@astrojs/underscore-redirects@1.0.4':
     resolution: {integrity: sha512-sD3bn7i2yC+ocxlhCTshdg3gUM471Nag3wgyHilA+kpmufokvmUu1p5Mw5GT5Xp8SPC1Nlq0BJAgV/lslnWvRw==}
 
-  '@astrojs/vercel@11.0.16':
-    resolution: {integrity: sha512-hqDyOlTkyoU8ib4EpNfDYmSN1NrBDKuEjLi6CUtUsMsb4NmvF+KrJaKH9/+VHaNNV7qpPpyuwSZGhk8GxUndig==}
+  '@astrojs/vercel@11.0.20':
+    resolution: {integrity: sha512-zKg8s+A1pyik3l4s46Q1Nq9/AWi935VFmEaCn1JzVp0M1G5AKYhCCm9qJUL2YYUrXYHWcG6K848gUXCU4EFfOg==}
     peerDependencies:
       astro: ^7.0.0
 
@@ -234,17 +237,26 @@ packages:
   '@emnapi/core@1.11.3':
     resolution: {integrity: sha512-zLpS5asjEb7lq8jYLq37N6XKaE41DIexlY1rF/z4/tIl3wo13Sqm28fRyfIsKZD+NZ8mM5RoKkpW/rBcuoSZSg==}
 
+  '@emnapi/core@2.0.0-beta.2':
+    resolution: {integrity: sha512-MzCVoWtcg4Pm2B3je5mMvYMvj3MmBKw+fU7vbsJc9/iT8ip6/eYIHo/Dsm/mr+wsHB6SEyJDuxB09Yy6r/8+4A==}
+
   '@emnapi/runtime@1.11.1':
     resolution: {integrity: sha512-vgj7R3y3Wgx24IQaGPA/R6YFXLHVMOZ0uVEyIQPaWs+rd1AzfEMXlAC22FYwO1XkKR6NPsq7mUandH8oIRdZFw==}
 
   '@emnapi/runtime@1.11.3':
     resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
 
+  '@emnapi/runtime@2.0.0-beta.2':
+    resolution: {integrity: sha512-JcrSPzPvZuNZvJqPTF9Fw25LbOJ8avzFVlaf2grmH4Cku0oGP47tRgqPZadcfj3YoZMHkFVnCYFbQM8I+i5QEw==}
+
   '@emnapi/wasi-threads@1.2.2':
     resolution: {integrity: sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA==}
 
   '@emnapi/wasi-threads@1.2.3':
     resolution: {integrity: sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g==}
+
+  '@emnapi/wasi-threads@2.2.0':
+    resolution: {integrity: sha512-JP7OYH38Q7+pyTAe14raZHLQIK7BDKbdwji+Xi3pcd/6QkJYQH3SX4wu6EplGrGJWRepoNzedfm0G3B9Z4e9Rw==}
 
   '@envelop/instrumentation@1.0.1':
     resolution: {integrity: sha512-FuexE2qd3Yc1Kh1DjTliwGxb9kyyv4ySBNnfJOxnQasVmGdcqX6AkkO5sIMxLWFRftp8PErOcIn2dQW/1RwytQ==}
@@ -613,6 +625,13 @@ packages:
       '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
       '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
 
+  '@napi-rs/wasm-runtime@1.2.6':
+    resolution: {integrity: sha512-mRyDmEw9/fCDXCGfL1sbgIw/GUK0PVxRW4YwgPN61F3LQ+fSyoBFarJVzgGyhF6kRzEQZ0FejDqm4WLXSeqQmw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
+    peerDependencies:
+      '@emnapi/core': ^1.7.1 || 2.0.0-beta.2
+      '@emnapi/runtime': ^1.7.1 || 2.0.0-beta.2
+
   '@netlify/ai@1.0.2':
     resolution: {integrity: sha512-ltgvK22P7IpCe1gxbMqZfJKnXg4zyu5pGtnozrTlKLrt8L/wmkfpCgCGckZXwcOJcI52IQhR2HyXofa9j5uVeQ==}
     engines: {node: '>=22.12.0'}
@@ -626,6 +645,10 @@ packages:
 
   '@netlify/blobs@11.1.6':
     resolution: {integrity: sha512-7CKpZs4WbMqMvHRxXpQw395X4YBw9keGy3yDr7+pXjAgHlDO7kdYv3chkBYRc78K6delj7Mrmn2NB1HK2E5DxQ==}
+    engines: {node: '>=22.12.0'}
+
+  '@netlify/blobs@11.1.7':
+    resolution: {integrity: sha512-iOOQSC990P5JtvBGfPMngRxId9H7FWJWAZrzGyYWanCreYElkU5VjoTBt0DgJE859ukNGHAwULZlOdiYHESHfA==}
     engines: {node: '>=22.12.0'}
 
   '@netlify/cache@4.1.0':
@@ -821,8 +844,17 @@ packages:
   '@oxc-project/types@0.155.0':
     resolution: {integrity: sha512-SeE8JPwW1xs1tHeNycjUtUBdhorRa8o4jlvjwk49R7/Z291i+4DQa7JJIgOm/TaYQZx+QrPQbVJ/9c8dMIZN8Q==}
 
+  '@oxc-project/types@0.157.0':
+    resolution: {integrity: sha512-95iTox1qdt6WGWce3xwNOVayByOfLaYAq+qGPpub6NWbBh9sv0GG3+zyfh9ZBCO/jVu5A0EWI+qQI7g6fevjxg==}
+
   '@rolldown/binding-android-arm-eabi@1.2.15':
     resolution: {integrity: sha512-aLcgK9gIJ3YRvrrtfSBbRa27F5WrpiTaPulnFpsHPxpUHgFlSgnU4854MHwoRGEBhfRJDWCS2WQ7lIjskE9Olw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [android]
+
+  '@rolldown/binding-android-arm-eabi@1.3.0':
+    resolution: {integrity: sha512-zjq+pUSE36RJG9nJXqrRfMCOxekzVhlaYMtFELHaOcRH4UqTnkWhbTbEixKEawsb0ZTVMRbn8RLYcuU4DYk8qg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm]
     os: [android]
@@ -833,8 +865,20 @@ packages:
     cpu: [arm64]
     os: [android]
 
+  '@rolldown/binding-android-arm64@1.3.0':
+    resolution: {integrity: sha512-HdnCiSmMGgEILGVLU1o4dcOblLGj8sMnqEFrDY/S7KRti1nTQHAqGGs2AniPspbK90AFS3pM23K/R0J3hPQXYQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+
   '@rolldown/binding-darwin-arm64@1.2.15':
     resolution: {integrity: sha512-m2WuQ6r0B4OTYxyPpNLtXaMRbRDUbG8YQV2Q3KTdSSK8Th6KHCnC8jVCJt8bvYeSB5WivkkNbc85mKadaSdOxA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@rolldown/binding-darwin-arm64@1.3.0':
+    resolution: {integrity: sha512-TkQ2JGC8/9UxoCeH5dSJj1gxuFhzw200QTJJd2YNPRXznSSM4XvpKV2Cs+RM2BcM8sa6xa4rmXNuiJ64+1993g==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [darwin]
@@ -845,8 +889,20 @@ packages:
     cpu: [x64]
     os: [darwin]
 
+  '@rolldown/binding-darwin-x64@1.3.0':
+    resolution: {integrity: sha512-Gr+iZW50RJZo4BPUazaDh/Azx7W0Rl04sy2MkXD+H4RkxzUX5hIrjaVw1BK+XHsccKExQAmCy6DhvRLlUzaYUg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+
   '@rolldown/binding-freebsd-x64@1.2.15':
     resolution: {integrity: sha512-g3l09pyFqhu+135JKkbkwiKGQmwU5hUMUPJ4VdBADvuqR8d33L6H578rh8m7rtxbdp+VmX/+nzI7nvhSZlzpUQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@rolldown/binding-freebsd-x64@1.3.0':
+    resolution: {integrity: sha512-RwAtx8peSqUoBf8pxE0L62xKXBNnA3BtdFV+07t13t0TQoASCtV9tnU67aKKMRZSiD06SU07chB5B8fWFdW3gQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [freebsd]
@@ -857,8 +913,21 @@ packages:
     cpu: [arm]
     os: [linux]
 
+  '@rolldown/binding-linux-arm-gnueabihf@1.3.0':
+    resolution: {integrity: sha512-ow8fq6kYaIx75D0EVT5GeF4DcawcEYYXJ2CvEaOzyygW1jtVDQU/9o5YYidctHBRDUgPzGaTNB6n/VMTmd1ymw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
   '@rolldown/binding-linux-arm64-gnu@1.2.15':
     resolution: {integrity: sha512-iTBjXx+B5QSvgI89lJfmqh4wTh8NabR1YZIIN3hNx4zSG0EVfVqkOvLulNpG4251pbd6/IAmZ/LefVk1Y4rPhw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-arm64-gnu@1.3.0':
+    resolution: {integrity: sha512-PLOWuiz+rdqSgiLgN7bxvy6DjXLj8gnJxzRS243LNnLi96VeyB7VFsC3eblcKv3Xwd3jQqJfbCWRhLijTIZyvQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
@@ -871,8 +940,22 @@ packages:
     os: [linux]
     libc: [musl]
 
+  '@rolldown/binding-linux-arm64-musl@1.3.0':
+    resolution: {integrity: sha512-CQ/k85cc342j5SnZ/gT9p132NXZRGTgLRhfItdYqUg+jpvL5HYFve0GB+zQDCYGwDjtDWIoqKSOitkmZMZc/tw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
   '@rolldown/binding-linux-ppc64-gnu@1.2.15':
     resolution: {integrity: sha512-9nWkcdd+H+XhaA3fQIwpHnKIrfx/PQ6rO0pivr78Og07tXlUlctBBJoEYLPfhTmCR/QxEVdn6uPjHV5SymPhdw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-ppc64-gnu@1.3.0':
+    resolution: {integrity: sha512-wk+ZG7xDP2px3cQRFoNoNp52/w1O5hTTtciHxuastreMOp8isYUTCpcG/rEYnSQBI+nycN+B9d9pBGua+qvV7w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [ppc64]
     os: [linux]
@@ -885,8 +968,22 @@ packages:
     os: [linux]
     libc: [glibc]
 
+  '@rolldown/binding-linux-s390x-gnu@1.3.0':
+    resolution: {integrity: sha512-sEgyZt72Rj7V5q6OZ7A4U2I5v4EMGEv3Fp5QmoncmKbUMTrGmpyH7MwENfERGbfUYjxdBmktw4JJLys5I1aQNQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
   '@rolldown/binding-linux-x64-gnu@1.2.15':
     resolution: {integrity: sha512-FHg60rS6DBePAYZ9X9F67x+JObFdmgn6tupA1C/a3B+CufFmTD4mX+e8M75tCiAO3foR/6xwVBI0KQiI7sn/rw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@rolldown/binding-linux-x64-gnu@1.3.0':
+    resolution: {integrity: sha512-PvL0BoBUwVugK1pFd+zyVk1L9F6ucmQ7oF2dpy8zKPHNlbW2zrU9Jst3fWYfG7z3owjxqhwAvi5G4o0AikrJMw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
@@ -899,11 +996,29 @@ packages:
     os: [linux]
     libc: [musl]
 
+  '@rolldown/binding-linux-x64-musl@1.3.0':
+    resolution: {integrity: sha512-5N4DdzAmLtnyuh027H6ViC99BeoA4T0RwKS6qUrl6zY70AKRsNDrnEZeWnqrKmDRFxXmv8zf9yhF2DxN/SfyGQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
   '@rolldown/binding-openharmony-arm64@1.2.15':
     resolution: {integrity: sha512-MyzC5Hrv/sm+Z7TSGKP/j8001RO2xQm1zOpCNVL4j0cY/VhBZviludA2YFQ7i4lH6ZAXxQm0lcMdBzM+99mE7w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [openharmony]
+
+  '@rolldown/binding-openharmony-arm64@1.3.0':
+    resolution: {integrity: sha512-Tz+2b+yF5eVRGX3DWebn2JIvZkNYI1gkafI+nF2fau2zeQDOpBAS8w1PxHi4ke//NIOE6+2DNYyq1veIjzAXqQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@rolldown/binding-wasm32-wasi@1.3.0':
+    resolution: {integrity: sha512-ntK6OFor3nQtS1TenZP5wX59oPpkKEmour3AipGHB32u+Z8QXxjVdG+7vNSvgerRWIj6vjg4XpKu42slb0vlXQ==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
+    cpu: [wasm32]
 
   '@rolldown/binding-win32-arm64-msvc@1.2.15':
     resolution: {integrity: sha512-+PgYiS+AH5omy6L45ZLxybasauJaj3M8buoT83D+nzPmCayXlxUV9hydhciCKVyIg0B/v0BtXPDE1uGqNwCPpg==}
@@ -911,8 +1026,20 @@ packages:
     cpu: [arm64]
     os: [win32]
 
+  '@rolldown/binding-win32-arm64-msvc@1.3.0':
+    resolution: {integrity: sha512-ldH38lBlOpS+b4fbSG9euQjhYXLE18PIz5hyvf6gvFfyVLodRE/Tsu4jV8UmPqjjce6lotmUUwscxPuer4lczQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+
   '@rolldown/binding-win32-x64-msvc@1.2.15':
     resolution: {integrity: sha512-HFZd2QNQYn1JbIi+Hpd7H+r/lkWxcfIu28nirZ6eCn2LafuvmExMlb/P96Sfx5tf7pPArw39IdhmCF8vmV+NhQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
+
+  '@rolldown/binding-win32-x64-msvc@1.3.0':
+    resolution: {integrity: sha512-HglhUzUPuXNTGFt5ZwJalSEvavhFSl+nxpQM9urkzkt+2oGI1ZSwgyytk9aGw15/0kk1TCHPc57nv3DdiG8/yQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [win32]
@@ -3242,6 +3369,11 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
+  rolldown@1.3.0:
+    resolution: {integrity: sha512-7j1jdVlzWzbRat9EDMsB/QmyMcc6hOO0vbcma8LGjBTmKlpS5Hem+5fpntc/HoRV5tLrG+Qo6I1ZHV/ZuL5S8g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
+
   rollup@4.64.12:
     resolution: {integrity: sha512-GhAu8ZglZ61VWSX/ZW3K/qkazgURBIQL0/Yy51QsS8DPyebR5Cf/Z2PANJFpTU0aVZ9byJcyqR6xvBbkXhdGYQ==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -3965,6 +4097,17 @@ snapshots:
       unified: 11.0.5
       yaml: 2.9.1
 
+  '@astrojs/internal-helpers@0.13.1':
+    dependencies:
+      '@types/hast': 3.0.5
+      '@types/mdast': 4.0.4
+      picomatch: 4.0.7
+      retext-smartypants: 6.2.0
+      shiki: 4.5.0
+      smol-toml: 1.9.1
+      unified: 11.0.5
+      yaml: 2.9.1
+
   '@astrojs/markdown-satteri@0.4.5':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
@@ -3972,16 +4115,16 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/netlify@8.2.10(@types/node@26.6.5)(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))(yaml@2.9.1)':
+  '@astrojs/netlify@8.2.12(@types/node@26.6.5)(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))(yaml@2.9.1)':
     dependencies:
-      '@astrojs/internal-helpers': 0.13.0
+      '@astrojs/internal-helpers': 0.13.1
       '@astrojs/underscore-redirects': 1.0.4
-      '@netlify/blobs': 11.1.6
+      '@netlify/blobs': 11.1.7(supports-color@10.2.2)
       '@netlify/functions': 6.0.3
-      '@netlify/vite-plugin': 3.0.1(@types/node@26.6.5)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
-      '@vercel/nft': 1.11.0(rollup@4.64.12)
-      astro: 7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
-      rolldown: 1.2.15
+      '@netlify/vite-plugin': 3.0.1(@types/node@26.6.5)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+      '@vercel/nft': 1.11.0(rollup@4.64.12)(supports-color@10.2.2)
+      astro: 7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
+      rolldown: 1.3.0
       tinyglobby: 0.2.17
       vite: 8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
@@ -4019,15 +4162,15 @@ snapshots:
 
   '@astrojs/underscore-redirects@1.0.4': {}
 
-  '@astrojs/vercel@11.0.16(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(rollup@4.64.12)(ws@8.22.0)':
+  '@astrojs/vercel@11.0.20(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))(rollup@4.64.12)(supports-color@10.2.2)(ws@8.22.0)':
     dependencies:
-      '@astrojs/internal-helpers': 0.13.0
+      '@astrojs/internal-helpers': 0.13.1
       '@vercel/analytics': 2.0.1
       '@vercel/functions': 3.10.2(ws@8.22.0)
-      '@vercel/nft': 1.11.0(rollup@4.64.12)
+      '@vercel/nft': 1.11.0(rollup@4.64.12)(supports-color@10.2.2)
       '@vercel/routing-utils': 6.6.0
-      astro: 7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
-      rolldown: 1.2.15
+      astro: 7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
+      rolldown: 1.3.0
       tinyglobby: 0.2.17
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-web-identity'
@@ -4139,6 +4282,12 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@emnapi/core@2.0.0-beta.2':
+    dependencies:
+      '@emnapi/wasi-threads': 2.2.0
+      tslib: 2.8.1
+    optional: true
+
   '@emnapi/runtime@1.11.1':
     dependencies:
       tslib: 2.8.1
@@ -4149,12 +4298,22 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@emnapi/runtime@2.0.0-beta.2':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@emnapi/wasi-threads@1.2.2':
     dependencies:
       tslib: 2.8.1
     optional: true
 
   '@emnapi/wasi-threads@1.2.3':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
+  '@emnapi/wasi-threads@2.2.0':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -4371,11 +4530,11 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
-  '@mapbox/node-pre-gyp@2.0.3':
+  '@mapbox/node-pre-gyp@2.0.3(supports-color@10.2.2)':
     dependencies:
       consola: 3.4.2
       detect-libc: 2.1.2
-      https-proxy-agent: 7.0.6
+      https-proxy-agent: 7.0.6(supports-color@10.2.2)
       node-fetch: 2.7.0
       nopt: 8.1.0
       semver: 7.8.5
@@ -4401,6 +4560,13 @@ snapshots:
       '@tybys/wasm-util': 0.10.4
     optional: true
 
+  '@napi-rs/wasm-runtime@1.2.6(@emnapi/core@2.0.0-beta.2)(@emnapi/runtime@2.0.0-beta.2)':
+    dependencies:
+      '@emnapi/core': 2.0.0-beta.2
+      '@emnapi/runtime': 2.0.0-beta.2
+      '@tybys/wasm-util': 0.10.4
+    optional: true
+
   '@netlify/ai@1.0.2':
     dependencies:
       '@netlify/api': 15.1.3
@@ -4413,10 +4579,18 @@ snapshots:
 
   '@netlify/binary-info@1.0.0': {}
 
-  '@netlify/blobs@11.1.6':
+  '@netlify/blobs@11.1.6(supports-color@10.2.2)':
     dependencies:
       '@netlify/dev-utils': 6.0.4
-      '@netlify/otel': 7.0.6
+      '@netlify/otel': 7.0.6(supports-color@10.2.2)
+      '@netlify/runtime-utils': 3.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@netlify/blobs@11.1.7(supports-color@10.2.2)':
+    dependencies:
+      '@netlify/dev-utils': 6.0.4
+      '@netlify/otel': 7.0.6(supports-color@10.2.2)
       '@netlify/runtime-utils': 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4471,19 +4645,19 @@ snapshots:
       parse-gitignore: 2.0.0
       semver: 7.8.5
 
-  '@netlify/dev@5.1.10(@types/node@26.6.5)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))':
+  '@netlify/dev@5.1.10(@types/node@26.6.5)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))':
     dependencies:
       '@netlify/ai': 1.0.2
-      '@netlify/blobs': 11.1.6
+      '@netlify/blobs': 11.1.6(supports-color@10.2.2)
       '@netlify/config': 25.3.0
       '@netlify/database-dev': 1.0.1
       '@netlify/dev-utils': 6.0.4
       '@netlify/edge-functions-dev': 2.0.5
-      '@netlify/functions-dev': 2.0.13(rollup@4.64.12)
+      '@netlify/functions-dev': 2.0.13(rollup@4.64.12)(supports-color@10.2.2)
       '@netlify/headers': 3.0.4
-      '@netlify/images': 2.0.5(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))
+      '@netlify/images': 2.0.5(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))
       '@netlify/redirects': 4.1.1
-      '@netlify/runtime': 5.0.10
+      '@netlify/runtime': 5.0.10(supports-color@10.2.2)
       '@netlify/server-dev': 0.1.4
       '@netlify/static': 4.0.0
       ulid: 3.0.2
@@ -4530,12 +4704,12 @@ snapshots:
     dependencies:
       '@netlify/types': 3.3.0
 
-  '@netlify/functions-dev@2.0.13(rollup@4.64.12)':
+  '@netlify/functions-dev@2.0.13(rollup@4.64.12)(supports-color@10.2.2)':
     dependencies:
-      '@netlify/blobs': 11.1.6
+      '@netlify/blobs': 11.1.6(supports-color@10.2.2)
       '@netlify/dev-utils': 6.0.4
       '@netlify/functions': 6.0.3
-      '@netlify/zip-it-and-ship-it': 16.5.1(rollup@4.64.12)
+      '@netlify/zip-it-and-ship-it': 16.5.1(rollup@4.64.12)(supports-color@10.2.2)
       cron-parser: 5.10.2
       decache: 4.6.2
       is-stream: 4.0.1
@@ -4566,20 +4740,20 @@ snapshots:
     dependencies:
       '@netlify/headers-parser': 10.1.1
 
-  '@netlify/images@2.0.5(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))':
+  '@netlify/images@2.0.5(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))':
     dependencies:
-      ipx: 4.0.0(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))
+      ipx: 4.0.0(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))
     transitivePeerDependencies:
       - '@types/node'
       - unstorage
 
   '@netlify/open-api@2.61.0': {}
 
-  '@netlify/otel@7.0.6':
+  '@netlify/otel@7.0.6(supports-color@10.2.2)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/core': 2.12.0(@opentelemetry/api@1.9.1)
-      '@opentelemetry/instrumentation': 0.223.0(@opentelemetry/api@1.9.1)
+      '@opentelemetry/instrumentation': 0.223.0(@opentelemetry/api@1.9.1)(supports-color@10.2.2)
       '@opentelemetry/resources': 2.12.0(@opentelemetry/api@1.9.1)
       '@opentelemetry/sdk-trace-node': 2.12.0(@opentelemetry/api@1.9.1)
     transitivePeerDependencies:
@@ -4602,9 +4776,9 @@ snapshots:
 
   '@netlify/runtime-utils@3.0.0': {}
 
-  '@netlify/runtime@5.0.10':
+  '@netlify/runtime@5.0.10(supports-color@10.2.2)':
     dependencies:
-      '@netlify/blobs': 11.1.6
+      '@netlify/blobs': 11.1.6(supports-color@10.2.2)
       '@netlify/cache': 4.1.0
       '@netlify/runtime-utils': 3.0.0
       '@netlify/types': 3.3.0
@@ -4633,9 +4807,9 @@ snapshots:
 
   '@netlify/types@3.3.0': {}
 
-  '@netlify/vite-plugin@3.0.1(@types/node@26.6.5)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
+  '@netlify/vite-plugin@3.0.1(@types/node@26.6.5)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
-      '@netlify/dev': 5.1.10(@types/node@26.6.5)(rollup@4.64.12)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)))
+      '@netlify/dev': 5.1.10(@types/node@26.6.5)(rollup@4.64.12)(supports-color@10.2.2)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)))
       '@netlify/dev-utils': 6.0.4
       dedent: 1.7.2
       vite: 8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
@@ -4650,14 +4824,14 @@ snapshots:
       - supports-color
       - unstorage
 
-  '@netlify/zip-it-and-ship-it@16.5.1(rollup@4.64.12)':
+  '@netlify/zip-it-and-ship-it@16.5.1(rollup@4.64.12)(supports-color@10.2.2)':
     dependencies:
       '@babel/parser': 7.29.9
       '@babel/types': 7.29.8
       '@netlify/binary-info': 1.0.0
       '@netlify/serverless-functions-api': 2.24.0
       '@opentelemetry/api': 1.9.1
-      '@vercel/nft': 1.3.1(rollup@4.64.12)
+      '@vercel/nft': 1.3.1(rollup@4.64.12)(supports-color@10.2.2)
       archiver: 8.0.0
       common-path-prefix: 3.0.0
       copy-file: 11.1.0
@@ -4675,7 +4849,7 @@ snapshots:
       normalize-path: 3.0.0
       p-map: 7.1.1
       path-exists: 5.0.0
-      precinct: 12.3.2
+      precinct: 12.3.2(supports-color@10.2.2)
       require-package-name: 2.0.1
       resolve: 2.0.0-next.7
       semver: 7.8.5
@@ -4720,12 +4894,12 @@ snapshots:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/semantic-conventions': 1.43.0
 
-  '@opentelemetry/instrumentation@0.223.0(@opentelemetry/api@1.9.1)':
+  '@opentelemetry/instrumentation@0.223.0(@opentelemetry/api@1.9.1)(supports-color@10.2.2)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/api-logs': 0.223.0
       import-in-the-middle: 3.5.2
-      require-in-the-middle: 8.0.1
+      require-in-the-middle: 8.0.1(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -4763,49 +4937,103 @@ snapshots:
 
   '@oxc-project/types@0.155.0': {}
 
+  '@oxc-project/types@0.157.0': {}
+
   '@rolldown/binding-android-arm-eabi@1.2.15':
+    optional: true
+
+  '@rolldown/binding-android-arm-eabi@1.3.0':
     optional: true
 
   '@rolldown/binding-android-arm64@1.2.15':
     optional: true
 
+  '@rolldown/binding-android-arm64@1.3.0':
+    optional: true
+
   '@rolldown/binding-darwin-arm64@1.2.15':
+    optional: true
+
+  '@rolldown/binding-darwin-arm64@1.3.0':
     optional: true
 
   '@rolldown/binding-darwin-x64@1.2.15':
     optional: true
 
+  '@rolldown/binding-darwin-x64@1.3.0':
+    optional: true
+
   '@rolldown/binding-freebsd-x64@1.2.15':
+    optional: true
+
+  '@rolldown/binding-freebsd-x64@1.3.0':
     optional: true
 
   '@rolldown/binding-linux-arm-gnueabihf@1.2.15':
     optional: true
 
+  '@rolldown/binding-linux-arm-gnueabihf@1.3.0':
+    optional: true
+
   '@rolldown/binding-linux-arm64-gnu@1.2.15':
+    optional: true
+
+  '@rolldown/binding-linux-arm64-gnu@1.3.0':
     optional: true
 
   '@rolldown/binding-linux-arm64-musl@1.2.15':
     optional: true
 
+  '@rolldown/binding-linux-arm64-musl@1.3.0':
+    optional: true
+
   '@rolldown/binding-linux-ppc64-gnu@1.2.15':
+    optional: true
+
+  '@rolldown/binding-linux-ppc64-gnu@1.3.0':
     optional: true
 
   '@rolldown/binding-linux-s390x-gnu@1.2.15':
     optional: true
 
+  '@rolldown/binding-linux-s390x-gnu@1.3.0':
+    optional: true
+
   '@rolldown/binding-linux-x64-gnu@1.2.15':
+    optional: true
+
+  '@rolldown/binding-linux-x64-gnu@1.3.0':
     optional: true
 
   '@rolldown/binding-linux-x64-musl@1.2.15':
     optional: true
 
+  '@rolldown/binding-linux-x64-musl@1.3.0':
+    optional: true
+
   '@rolldown/binding-openharmony-arm64@1.2.15':
+    optional: true
+
+  '@rolldown/binding-openharmony-arm64@1.3.0':
+    optional: true
+
+  '@rolldown/binding-wasm32-wasi@1.3.0':
+    dependencies:
+      '@emnapi/core': 2.0.0-beta.2
+      '@emnapi/runtime': 2.0.0-beta.2
+      '@napi-rs/wasm-runtime': 1.2.6(@emnapi/core@2.0.0-beta.2)(@emnapi/runtime@2.0.0-beta.2)
     optional: true
 
   '@rolldown/binding-win32-arm64-msvc@1.2.15':
     optional: true
 
+  '@rolldown/binding-win32-arm64-msvc@1.3.0':
+    optional: true
+
   '@rolldown/binding-win32-x64-msvc@1.2.15':
+    optional: true
+
+  '@rolldown/binding-win32-x64-msvc@1.3.0':
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
@@ -4938,11 +5166,11 @@ snapshots:
       color: 5.0.3
       text-hex: 1.0.0
 
-  '@storyblok/astro@10.3.2(@floating-ui/dom@1.8.0)(astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
+  '@storyblok/astro@10.3.2(@floating-ui/dom@1.8.0)(astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@storyblok/js': 6.3.4(@floating-ui/dom@1.8.0)
       '@storyblok/richtext': 5.3.3(@floating-ui/dom@1.8.0)
-      astro: 7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
+      astro: 7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
       camelcase: 8.0.0
       morphdom: 2.7.8
     transitivePeerDependencies:
@@ -5177,7 +5405,7 @@ snapshots:
     dependencies:
       '@types/node': 26.6.5
 
-  '@typescript-eslint/project-service@8.72.0(typescript@5.9.3)':
+  '@typescript-eslint/project-service@8.72.0(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.72.0(typescript@5.9.3)
       '@typescript-eslint/types': 8.72.0
@@ -5192,9 +5420,9 @@ snapshots:
 
   '@typescript-eslint/types@8.72.0': {}
 
-  '@typescript-eslint/typescript-estree@8.72.0(typescript@5.9.3)':
+  '@typescript-eslint/typescript-estree@8.72.0(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/project-service': 8.72.0(typescript@5.9.3)
+      '@typescript-eslint/project-service': 8.72.0(supports-color@10.2.2)(typescript@5.9.3)
       '@typescript-eslint/tsconfig-utils': 8.72.0(typescript@5.9.3)
       '@typescript-eslint/types': 8.72.0
       '@typescript-eslint/visitor-keys': 8.72.0
@@ -5231,9 +5459,9 @@ snapshots:
     optionalDependencies:
       ws: 8.22.0
 
-  '@vercel/nft@1.11.0(rollup@4.64.12)':
+  '@vercel/nft@1.11.0(rollup@4.64.12)(supports-color@10.2.2)':
     dependencies:
-      '@mapbox/node-pre-gyp': 2.0.3
+      '@mapbox/node-pre-gyp': 2.0.3(supports-color@10.2.2)
       '@rollup/pluginutils': 5.5.1(rollup@4.64.12)
       acorn: 8.19.0
       acorn-import-attributes: 1.9.5(acorn@8.19.0)
@@ -5250,9 +5478,9 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/nft@1.3.1(rollup@4.64.12)':
+  '@vercel/nft@1.3.1(rollup@4.64.12)(supports-color@10.2.2)':
     dependencies:
-      '@mapbox/node-pre-gyp': 2.0.3
+      '@mapbox/node-pre-gyp': 2.0.3(supports-color@10.2.2)
       '@rollup/pluginutils': 5.5.1(rollup@4.64.12)
       acorn: 8.19.0
       acorn-import-attributes: 1.9.5(acorn@8.19.0)
@@ -5437,7 +5665,7 @@ snapshots:
 
   ast-module-types@6.0.2: {}
 
-  astro@7.4.2(@netlify/blobs@11.1.6)(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1):
+  astro@7.4.2(@netlify/blobs@11.1.6(supports-color@10.2.2))(@types/node@26.6.5)(@vercel/functions@3.10.2(ws@8.22.0))(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.2
       '@astrojs/internal-helpers': 0.13.0
@@ -5484,7 +5712,7 @@ snapshots:
       tinyps: 0.5.1
       ultrahtml: 1.7.0
       unifont: 1.0.3
-      unstorage: 1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0))
+      unstorage: 1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0))
       verkit: 0.5.0
       vite: 8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
       vitefu: 1.1.3(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
@@ -5857,16 +6085,16 @@ snapshots:
 
   detective-stylus@5.0.1: {}
 
-  detective-typescript@14.1.2(typescript@5.9.3):
+  detective-typescript@14.1.2(supports-color@10.2.2)(typescript@5.9.3):
     dependencies:
-      '@typescript-eslint/typescript-estree': 8.72.0(typescript@5.9.3)
+      '@typescript-eslint/typescript-estree': 8.72.0(supports-color@10.2.2)(typescript@5.9.3)
       ast-module-types: 6.0.2
       node-source-walk: 7.0.2
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
-  detective-vue2@2.3.0(typescript@5.9.3):
+  detective-vue2@2.3.0(supports-color@10.2.2)(typescript@5.9.3):
     dependencies:
       '@dependents/detective-less': 5.0.3
       '@vue/compiler-sfc': 3.5.44
@@ -5874,7 +6102,7 @@ snapshots:
       detective-sass: 6.0.2
       detective-scss: 5.0.2
       detective-stylus: 5.0.1
-      detective-typescript: 14.1.2(typescript@5.9.3)
+      detective-typescript: 14.1.2(supports-color@10.2.2)(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
@@ -6382,7 +6610,7 @@ snapshots:
 
   http-cache-semantics@4.3.0: {}
 
-  https-proxy-agent@7.0.6:
+  https-proxy-agent@7.0.6(supports-color@10.2.2):
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@10.2.2)
@@ -6413,12 +6641,12 @@ snapshots:
       hasown: 2.0.4
       side-channel: 1.1.1
 
-  ipx@4.0.0(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0))):
+  ipx@4.0.0(@types/node@26.6.5)(unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0))):
     dependencies:
       sharp: 0.35.5(@types/node@26.6.5)
       srvx: 1.0.7
     optionalDependencies:
-      unstorage: 1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0))
+      unstorage: 1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0))
     transitivePeerDependencies:
       - '@types/node'
 
@@ -7050,7 +7278,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.2
 
-  precinct@12.3.2:
+  precinct@12.3.2(supports-color@10.2.2):
     dependencies:
       '@dependents/detective-less': 5.0.3
       commander: 12.1.0
@@ -7061,8 +7289,8 @@ snapshots:
       detective-sass: 6.0.2
       detective-scss: 5.0.2
       detective-stylus: 5.0.1
-      detective-typescript: 14.1.2(typescript@5.9.3)
-      detective-vue2: 2.3.0(typescript@5.9.3)
+      detective-typescript: 14.1.2(supports-color@10.2.2)(typescript@5.9.3)
+      detective-vue2: 2.3.0(supports-color@10.2.2)(typescript@5.9.3)
       module-definition: 6.0.2
       node-source-walk: 7.0.2
       postcss: 8.5.31
@@ -7261,7 +7489,7 @@ snapshots:
 
   require-from-string@2.0.2: {}
 
-  require-in-the-middle@8.0.1:
+  require-in-the-middle@8.0.1(supports-color@10.2.2):
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
       module-details-from-path: 1.0.4
@@ -7313,6 +7541,28 @@ snapshots:
       '@rolldown/binding-openharmony-arm64': 1.2.15
       '@rolldown/binding-win32-arm64-msvc': 1.2.15
       '@rolldown/binding-win32-x64-msvc': 1.2.15
+
+  rolldown@1.3.0:
+    dependencies:
+      '@oxc-project/types': 0.157.0
+      '@rolldown/pluginutils': 1.0.1
+    optionalDependencies:
+      '@rolldown/binding-android-arm-eabi': 1.3.0
+      '@rolldown/binding-android-arm64': 1.3.0
+      '@rolldown/binding-darwin-arm64': 1.3.0
+      '@rolldown/binding-darwin-x64': 1.3.0
+      '@rolldown/binding-freebsd-x64': 1.3.0
+      '@rolldown/binding-linux-arm-gnueabihf': 1.3.0
+      '@rolldown/binding-linux-arm64-gnu': 1.3.0
+      '@rolldown/binding-linux-arm64-musl': 1.3.0
+      '@rolldown/binding-linux-ppc64-gnu': 1.3.0
+      '@rolldown/binding-linux-s390x-gnu': 1.3.0
+      '@rolldown/binding-linux-x64-gnu': 1.3.0
+      '@rolldown/binding-linux-x64-musl': 1.3.0
+      '@rolldown/binding-openharmony-arm64': 1.3.0
+      '@rolldown/binding-wasm32-wasi': 1.3.0
+      '@rolldown/binding-win32-arm64-msvc': 1.3.0
+      '@rolldown/binding-win32-x64-msvc': 1.3.0
 
   rollup@4.64.12:
     dependencies:
@@ -7819,7 +8069,7 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unstorage@1.17.6(@netlify/blobs@11.1.6)(@vercel/functions@3.10.2(ws@8.22.0)):
+  unstorage@1.17.6(@netlify/blobs@11.1.6(supports-color@10.2.2))(@vercel/functions@3.10.2(ws@8.22.0)):
     dependencies:
       anymatch: 3.1.3
       chokidar: 5.0.0
@@ -7830,7 +8080,7 @@ snapshots:
       ofetch: 1.5.1
       ufo: 1.6.4
     optionalDependencies:
-      '@netlify/blobs': 11.1.6
+      '@netlify/blobs': 11.1.6(supports-color@10.2.2)
       '@vercel/functions': 3.10.2(ws@8.22.0)
 
   uri-js@4.4.1:
